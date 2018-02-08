@@ -9,7 +9,7 @@
   
   You can imagine that this is your network api call delivering you data
 */
-const profiles = require("./data/shaadiData.json");
+const profilesData = require("./data/shaadiData.json");
 
 /*
   Challenge 1.1 - write a function that gets only the 
@@ -18,7 +18,15 @@ const profiles = require("./data/shaadiData.json");
   Expected const brazilUserProfiles = []
 */
 
-console.log();
+var contents = fs.readFileSync("jsoncontent.json");
+// Define to JSON type
+var jsonContent = JSON.parse(contents);
+const profiles = jsonContent.data;
+
+// const brazilUserProfiles = profiles.filter((profile) => {
+// return profile.
+// });
+console.log(profiles);
 
 /*
   Challenge 1.2 - write a function that gets only the 

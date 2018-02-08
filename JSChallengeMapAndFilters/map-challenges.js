@@ -16,9 +16,13 @@ const shaadiData = require("./data/shaadiData.json");
   Challenge 1.1 - write a function that returns an array of fullnames i.e. each element is a string that has
   `title, first, last` instead of those separate fields
   Expected const profileNameArrays = ['fullnameOne', 'etc', 'etc'] <-- array of strings fullnames
-*/
+*/ 
 
 console.log(shaadiData);
+
+const profileNameArrays = profiles.map((profile) => profile.name.title.concat(" " , profile.name.first , " " , profile.name.last));
+
+console.log(profileNameArrays);
 
 /*
   Challenge 1.2 - write a function that returns an array that has users grouped by nationality
@@ -32,7 +36,15 @@ console.log(shaadiData);
   Note: This might feel super hard. Don't get stuck on it. Try it later
 */
 
-console.log();
+
+const nationalities = Array.from(new Set(profiles.map((profile) => profile.nat)));
+console.log(nationalities);
+
+const usersGroupedByNationality = {};
+nationalities.forEach((nation) => {
+  usersGroupedByNationality[nation] =  profiles.filter((profile) => profile.nat == nation);
+});
+console.log(usersGroupedByNationality);
 
 /*
   Challenge 1.3 - write a function that returns a transformed array of profiles combined with photo data
