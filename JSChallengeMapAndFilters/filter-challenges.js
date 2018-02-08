@@ -1,3 +1,5 @@
+const util = require('util')
+
 /*
   Follow step by step instructions to complete these 
   multiple challenges related to arrays.
@@ -25,7 +27,6 @@ console.log(profilesData)
 */
 
 const brazilUserProfiles = profilesData.data.filter((profile) => {
-  console.log(profile);
 return profile.mini_profile.marital_status == "Never Married"
 });
 console.log (brazilUserProfiles);
@@ -48,7 +49,15 @@ console.log (brazilUserProfiles);
 
   Expected const collegeUserProfiles = []
 */
+const collegeUserProfiles =  profilesData.data.map((profile) => {
+  return profile.education;
+  });
 
+
+
+   
+
+console.log(util.inspect(collegeUserProfiles, false, null));
 console.log();
 
 /*
