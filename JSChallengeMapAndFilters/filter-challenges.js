@@ -9,7 +9,13 @@
   
   You can imagine that this is your network api call delivering you data
 */
+
+/* Do  npm i json-loader --save-dev
+In case you could not load json
+*/
+
 const profilesData = require("./data/shaadiData.json");
+console.log(profilesData)
 
 /*
   Challenge 1.1 - write a function that gets only the 
@@ -18,15 +24,11 @@ const profilesData = require("./data/shaadiData.json");
   Expected const brazilUserProfiles = []
 */
 
-var contents = fs.readFileSync("jsoncontent.json");
-// Define to JSON type
-var jsonContent = JSON.parse(contents);
-const profiles = jsonContent.data;
-
-// const brazilUserProfiles = profiles.filter((profile) => {
-// return profile.
-// });
-console.log(profiles);
+const brazilUserProfiles = profilesData.data.filter((profile) => {
+  console.log(profile);
+return profile.mini_profile.marital_status == "Never Married"
+});
+console.log (brazilUserProfiles);
 
 /*
   Challenge 1.2 - write a function that gets only the 

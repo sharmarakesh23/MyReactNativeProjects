@@ -8,5 +8,12 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "es6-promise": "^4.2.4",
+    "isomorphic-fetch": "^2.2.1"
+  },
+  "devDependencies": {
+    "json-loader": "^0.5.7"
+  }
 }
