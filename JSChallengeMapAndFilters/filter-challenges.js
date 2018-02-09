@@ -69,4 +69,8 @@ console.log();
 
 */
 
-console.log();
+const profilesWithMultiplePhotos = profilesData.data.filter((profile) => {
+  return profile.photo_details.photos.length > 1
+  });
+
+console.log(profilesWithMultiplePhotos);
