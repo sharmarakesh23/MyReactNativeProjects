@@ -62,7 +62,7 @@ export default class Main extends Component {
         }
         else
         {
-            alert('Please enter valid to do text.')
+            alert('Please enter vsdfasdfasdfalid to do text.')
         }
     }
 
