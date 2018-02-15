@@ -1,6 +1,7 @@
 import React from 'react';
 import ChallengeCardView from './ChallengeCardView';
 import ChallengeListView from './ChallengeListView';
+import APICalls from './APICalls';
 
 export default class Main extends React.Component {
 
@@ -8,6 +9,7 @@ export default class Main extends React.Component {
     return (
       //<ChallengeCardView/>
       <ChallengeListView/>
+      //<APICalls/>
     )
   }
 }
