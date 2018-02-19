@@ -8,7 +8,7 @@ import {
 import axios from 'axios';
 import SHProfileCardView from './SHProfileCardView';
 
-export default class Main extends React.Component {
+export default class ChallengeCardView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
