@@ -18,8 +18,8 @@ export default class SHChatAvatar extends React.Component {
     return (
       <View style={styles.container}>
         <Image 
-        defaultSource={this.getPlaceHolderImage()} 
-        source = this.props.profile.phot0 />
+        defaultSource = {this.getPlaceHolderImage()} 
+        source = {this.props.profile.photo} />
       </View>
     );
   }

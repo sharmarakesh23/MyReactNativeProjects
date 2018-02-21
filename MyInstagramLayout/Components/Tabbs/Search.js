@@ -1,8 +1,30 @@
 import React from "react"
 import { StyleSheet, Text, View } from "react-native"
+import { Icon } from "native-base"
 
 export default class Search extends React.Component {
-  render() {
-    return <Text>'Search ss'</Text>
+
+
+  static navigationOptions = {
+    tabBarIcon:({tintColor}) => (
+      <Icon name ="ios-search" style={{color:tintColor}}/>
+    )
   }
+
+  render() {
+    return (
+        <View style={styles.container}>
+            <Text>Search</Text>
+        </View>
+    );
 }
+}
+
+const styles = StyleSheet.create({
+container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#e2e2e2',
+},
+});
