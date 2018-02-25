@@ -1,3 +1,5 @@
+//@ts-check
+
 /*
   Follow step by step instructions to complete these 
   multiple challenges related to arrays.
@@ -9,20 +11,30 @@
   
   You can imagine that this is your network api call delivering you data
 */
-const profiles = require("./data/profileData");
-const shaadiData = require("./data/shaadiData.json");
+const profiles = require("./data/profileData")
+const shaadiData = require("./data/shaadiData.json")
 
 /*
   Challenge 1.1 - write a function that returns an array of fullnames i.e. each element is a string that has
   `title, first, last` instead of those separate fields
   Expected const profileNameArrays = ['fullnameOne', 'etc', 'etc'] <-- array of strings fullnames
-*/ 
+*/
 
-console.log(shaadiData);
+//onsole.log(shaadiData)
+function initializeNames(name) {
+  return name.charAt(0).toUpperCase()
+}
 
-const profileNameArrays = profiles.map((profile) => profile.name.title.concat(" " , profile.name.first , " " , profile.name.last));
+const profileNames = profiles => {
+  return profiles.map(({ name }) => {
+    return `${initializeNames(name.title)} ${initializeNames(
+      name.first
+    )} ${initializeNames(name.last)}`
+  })
+}
+//const profileNameArrays = profiles.map((profile) => profile.name.title.concat(" " , profile.name.first , " " , profile.name.last));
 
-console.log(profileNameArrays);
+console.log(profileNames(profiles))
 
 /*
   Challenge 1.2 - write a function that returns an array that has users grouped by nationality
@@ -36,15 +48,16 @@ console.log(profileNameArrays);
   Note: This might feel super hard. Don't get stuck on it. Try it later
 */
 
+const nationalities = Array.from(new Set(profiles.map(profile => profile.nat)))
+//console.log(nationalities);
 
-const nationalities = Array.from(new Set(profiles.map((profile) => profile.nat)));
-console.log(nationalities);
-
-const usersGroupedByNationality = {};
-nationalities.forEach((nation) => {
-  usersGroupedByNationality[nation] =  profiles.filter((profile) => profile.nat == nation);
-});
-console.log(usersGroupedByNationality);
+const usersGroupedByNationality = {}
+nationalities.forEach(nation => {
+  usersGroupedByNationality[nation] = profiles.filter(
+    profile => profile.nat == nation
+  )
+})
+//console.log(usersGroupedByNationality);
 
 /*
   Challenge 1.3 - write a function that returns a transformed array of profiles combined with photo data
@@ -68,7 +81,7 @@ const profilesData = [
       ]
     }
   }
-];
+]
 
 /* and then transform it into this shape:
 
