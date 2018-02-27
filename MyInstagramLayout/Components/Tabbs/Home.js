@@ -25,7 +25,10 @@ export default class Home extends React.Component {
       require("../assets/images/1.jpg"),
       require("../assets/images/2.jpg"),
       require("../assets/images/3.png"),
-      require("../assets/images/me.jpg")
+      require("../assets/images/me.jpg"),
+      require("../assets/images/1.jpg"),
+      require("../assets/images/2.jpg"),
+      require("../assets/images/3.png")
     ];
 
     return (
